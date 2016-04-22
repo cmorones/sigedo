@@ -223,7 +223,7 @@
     $partidas[0] = "Bandeja Por Confirmar";
     $partidas[1] = "Bandeja de Entrada";
     $partidas[2] = "Bandeja de Salida";
-    $partidas[3] = "Bandeja de Turnos";
+   // $partidas[3] = "Bandeja de Turnos";
 
 
     //echo CHtml::label('Tipo de Informe','terms'); ?>
@@ -235,6 +235,80 @@
                     'maximumSelectionSize'=>5,
                     ),
   'data' => $partidas,
+)); ?>
+</div>
+</div>
+
+<div class="row">
+ <div class="col-md-2">
+ <?php  echo CHtml::label('Area Remitente','terms'); ?>
+ </div>
+ <div class="col-md-6">
+    <?php 
+
+     $query ='SELECT 
+  areas.id, 
+  areas.nombre
+FROM 
+  public.areas
+WHERE 
+  areas.status = 1 ';
+
+        $resultrem=Yii::app()->db->createCommand($query)->queryAll();
+
+         $remitentes['false'] = 'Todos';
+
+         foreach ($resultrem as $value) {
+                    $remitentes[$value['id']] = "$value[nombre]";
+                }
+
+
+    //echo CHtml::label('Tipo de Informe','terms'); ?>
+<?php $this->widget('ext.select2.ESelect2',array(
+  'name'=>'area_rem',
+   'options'=>array(
+                      //  'placeholder' => 'Seleccionar Tipo de Informe', 
+                    'width'=>'100%',
+                    'maximumSelectionSize'=>5,
+                    ),
+  'data' => $remitentes,
+)); ?>
+</div>
+</div>
+
+<div class="row">
+ <div class="col-md-2">
+ <?php  echo CHtml::label('Area Destinatario','terms'); ?>
+ </div>
+ <div class="col-md-6">
+    <?php 
+
+      $query ='SELECT 
+  areas.id, 
+  areas.nombre
+FROM 
+  public.areas
+WHERE 
+  areas.status = 1 ';
+
+        $resultrem=Yii::app()->db->createCommand($query)->queryAll();
+
+         $destinatarios['false'] = 'Todos';
+
+         foreach ($resultrem as $value) {
+                    $destinatarios[$value['id']] = "$value[nombre]";
+                }
+
+
+    //echo CHtml::label('Tipo de Informe','terms'); ?>
+<?php $this->widget('ext.select2.ESelect2',array(
+  'name'=>'area_dest',
+   'options'=>array(
+                      //  'placeholder' => 'Seleccionar Tipo de Informe', 
+                    'width'=>'100%',
+                    'maximumSelectionSize'=>5,
+                    ),
+  'data' => $destinatarios,
 )); ?>
 </div>
 </div>

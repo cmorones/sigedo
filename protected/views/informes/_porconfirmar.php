@@ -28,21 +28,267 @@
 
                               $id_area = Yii::app()->user->id_area;
 
-                               $sql2 ="SELECT 
-                                                                  count(correspondencia.id) as cuenta 
-                                                                FROM 
-                                                                  public.correspondencia, 
-                                                                  public.documentos, 
-                                                                  public.directorio, 
-                                                                  public.directorio as direm
-                                                                 
-                                                                WHERE 
-                                                                  correspondencia.destinatario = directorio.id_area AND
-                                                                  documentos.id = correspondencia.id_docto AND
-                                                                  documentos.remitente = direm.id AND
-                                                                  documentos.estado = 1 AND
-                                                                  correspondencia.estado = 1 AND
-                                                                  directorio.id_area = $id_area";
+                              if($area_rem=='false' && $area_dest=='false'){
+
+                                 $sql2 ="SELECT 
+                                                                    count(correspondencia.id) as cuenta 
+                                                                  FROM 
+                                                                    public.correspondencia, 
+                                                                    public.documentos, 
+                                                                    public.directorio, 
+                                                                    public.directorio as direm
+                                                                   
+                                                                  WHERE 
+                                                                    correspondencia.destinatario = directorio.id_area AND
+                                                                    documentos.id = correspondencia.id_docto AND
+                                                                    documentos.remitente = direm.id AND
+                                                                    documentos.estado = 1 AND
+                                                                    correspondencia.estado = 1 AND
+                                                                    directorio.id_area = $id_area";
+
+
+                                                                                    $query ="SELECT 
+  documentos.documento, 
+  documentos.fecha, 
+  documentos.asunto, 
+  correspondencia.tipo, 
+  correspondencia.fecha_acuse, 
+  nombredoc.nombre as nomdoc,
+  nombretipo.nombre as nomdoc2, 
+  directorio.cargo, 
+  datos_personales.nombre as nombrerem, 
+  datos_personales.apellido_p as apprem, 
+  datos_personales.apellido_m as apmrem, 
+  datosdest.nombre as nombredest, 
+  datosdest.apellido_p as appdest, 
+  datosdest.apellido_m as apmdest,  
+  directoriodest.cargo as cargodest,
+  areas.nombre as nombrearea,
+  areas2.nombre as nombreareadest
+FROM 
+  public.documentos, 
+  public.correspondencia, 
+  public.directorio, 
+  public.tipo_doc nombredoc,
+  public.tipo_copia nombretipo,  
+  public.datos_personales, 
+  public.directorio directoriodest, 
+  public.datos_personales datosdest,
+  public.areas,
+  public.areas areas2
+WHERE 
+  documentos.remitente = directorio.id AND
+  documentos.id = correspondencia.id_docto AND
+  correspondencia.destinatario = directoriodest.id AND
+  directorio.id_dp = datos_personales.id AND
+  nombredoc.id = correspondencia.tipo AND
+  nombretipo.id = documentos.tipo_docto AND
+  directoriodest.id_dp = datosdest.id AND
+  directoriodest.id_area = areas2.id AND
+  areas.id = directorio.id_area AND
+  directoriodest.id_area = $id_area AND
+  correspondencia.estado_acuse = 0  AND 
+  (documentos.fecha between '$fecha1' and '$fecha2')  AND
+  documentos.estado = 1
+  order by documentos.id desc";
+
+                              } elseif ($area_rem=='false' && $area_dest!='false') {
+                                 $sql2 ="SELECT 
+                                                                    count(correspondencia.id) as cuenta 
+                                                                  FROM 
+                                                                    public.correspondencia, 
+                                                                    public.documentos, 
+                                                                    public.directorio, 
+                                                                    public.directorio as direm
+                                                                   
+                                                                  WHERE 
+                                                                    correspondencia.destinatario = directorio.id_area AND
+                                                                    documentos.id = correspondencia.id_docto AND
+                                                                    documentos.remitente = direm.id AND
+                                                                    documentos.estado = 1 AND
+                                                                    correspondencia.estado = 1 AND
+                                                                    directorio.id_area = $id_area";
+
+                                         $query ="SELECT 
+                                          documentos.documento, 
+                                          documentos.fecha, 
+                                          documentos.asunto, 
+                                          correspondencia.tipo, 
+                                          correspondencia.fecha_acuse, 
+                                          nombredoc.nombre as nomdoc,
+                                          nombretipo.nombre as nomdoc2, 
+                                          directorio.cargo, 
+                                          datos_personales.nombre as nombrerem, 
+                                          datos_personales.apellido_p as apprem, 
+                                          datos_personales.apellido_m as apmrem, 
+                                          datosdest.nombre as nombredest, 
+                                          datosdest.apellido_p as appdest, 
+                                          datosdest.apellido_m as apmdest,  
+                                          directoriodest.cargo as cargodest,
+                                          areas.nombre as nombrearea,
+                                          areas2.nombre as nombreareadest
+                                        FROM 
+                                          public.documentos, 
+                                          public.correspondencia, 
+                                          public.directorio, 
+                                          public.tipo_doc nombredoc,
+                                          public.tipo_copia nombretipo,  
+                                          public.datos_personales, 
+                                          public.directorio directoriodest, 
+                                          public.datos_personales datosdest,
+                                          public.areas,
+                                          public.areas areas2
+                                        WHERE 
+                                          documentos.remitente = directorio.id AND
+                                          documentos.id = correspondencia.id_docto AND
+                                          correspondencia.destinatario = directoriodest.id AND
+                                          directorio.id_dp = datos_personales.id AND
+                                          nombredoc.id = correspondencia.tipo AND
+                                          nombretipo.id = documentos.tipo_docto AND
+                                          directoriodest.id_dp = datosdest.id AND
+                                          directoriodest.id_area = areas2.id AND
+                                          areas.id = directorio.id_area AND
+                                          directoriodest.id_area = $id_area AND
+                                          correspondencia.estado_acuse = 0  AND 
+                                          (documentos.fecha between '$fecha1' and '$fecha2')  AND
+                                          documentos.estado = 1 AND
+                                          areas2.id = $area_dest 
+                                          order by documentos.id desc";
+
+
+
+                              } elseif ($area_rem!='false' && $area_dest=='false') {
+                                 $sql2 ="SELECT 
+                                                                    count(correspondencia.id) as cuenta 
+                                                                  FROM 
+                                                                    public.correspondencia, 
+                                                                    public.documentos, 
+                                                                    public.directorio, 
+                                                                    public.directorio as direm
+                                                                   
+                                                                  WHERE 
+                                                                    correspondencia.destinatario = directorio.id_area AND
+                                                                    documentos.id = correspondencia.id_docto AND
+                                                                    documentos.remitente = direm.id AND
+                                                                    documentos.estado = 1 AND
+                                                                    correspondencia.estado = 1 AND
+                                                                    directorio.id_area = $id_area";
+
+
+                                $query ="SELECT 
+                                          documentos.documento, 
+                                          documentos.fecha, 
+                                          documentos.asunto, 
+                                          correspondencia.tipo, 
+                                          correspondencia.fecha_acuse, 
+                                          nombredoc.nombre as nomdoc,
+                                          nombretipo.nombre as nomdoc2, 
+                                          directorio.cargo, 
+                                          datos_personales.nombre as nombrerem, 
+                                          datos_personales.apellido_p as apprem, 
+                                          datos_personales.apellido_m as apmrem, 
+                                          datosdest.nombre as nombredest, 
+                                          datosdest.apellido_p as appdest, 
+                                          datosdest.apellido_m as apmdest,  
+                                          directoriodest.cargo as cargodest,
+                                          areas.nombre as nombrearea,
+                                          areas2.nombre as nombreareadest
+                                        FROM 
+                                          public.documentos, 
+                                          public.correspondencia, 
+                                          public.directorio, 
+                                          public.tipo_doc nombredoc,
+                                          public.tipo_copia nombretipo,  
+                                          public.datos_personales, 
+                                          public.directorio directoriodest, 
+                                          public.datos_personales datosdest,
+                                          public.areas,
+                                          public.areas areas2
+                                        WHERE 
+                                          documentos.remitente = directorio.id AND
+                                          documentos.id = correspondencia.id_docto AND
+                                          correspondencia.destinatario = directoriodest.id AND
+                                          directorio.id_dp = datos_personales.id AND
+                                          nombredoc.id = correspondencia.tipo AND
+                                          nombretipo.id = documentos.tipo_docto AND
+                                          directoriodest.id_dp = datosdest.id AND
+                                          directoriodest.id_area = areas2.id AND
+                                          areas.id = directorio.id_area AND
+                                          directoriodest.id_area = $id_area AND
+                                          correspondencia.estado_acuse = 0  AND 
+                                          (documentos.fecha between '$fecha1' and '$fecha2')  AND
+                                          documentos.estado = 1 AND
+                                          areas.id = $area_rem 
+                                          order by documentos.id desc";
+                              } elseif ($area_rem!='false' && $area_dest!='false') {
+                                 $sql2 ="SELECT 
+                                                                    count(correspondencia.id) as cuenta 
+                                                                  FROM 
+                                                                    public.correspondencia, 
+                                                                    public.documentos, 
+                                                                    public.directorio, 
+                                                                    public.directorio as direm
+                                                                   
+                                                                  WHERE 
+                                                                    correspondencia.destinatario = directorio.id_area AND
+                                                                    documentos.id = correspondencia.id_docto AND
+                                                                    documentos.remitente = direm.id AND
+                                                                    documentos.estado = 1 AND
+                                                                    correspondencia.estado = 1 AND
+                                                                    directorio.id_area = $id_area";
+
+
+                                $query ="SELECT 
+                                          documentos.documento, 
+                                          documentos.fecha, 
+                                          documentos.asunto, 
+                                          correspondencia.tipo, 
+                                          correspondencia.fecha_acuse, 
+                                          nombredoc.nombre as nomdoc,
+                                          nombretipo.nombre as nomdoc2, 
+                                          directorio.cargo, 
+                                          datos_personales.nombre as nombrerem, 
+                                          datos_personales.apellido_p as apprem, 
+                                          datos_personales.apellido_m as apmrem, 
+                                          datosdest.nombre as nombredest, 
+                                          datosdest.apellido_p as appdest, 
+                                          datosdest.apellido_m as apmdest,  
+                                          directoriodest.cargo as cargodest,
+                                          areas.nombre as nombrearea,
+                                          areas2.nombre as nombreareadest
+                                        FROM 
+                                          public.documentos, 
+                                          public.correspondencia, 
+                                          public.directorio, 
+                                          public.tipo_doc nombredoc,
+                                          public.tipo_copia nombretipo,  
+                                          public.datos_personales, 
+                                          public.directorio directoriodest, 
+                                          public.datos_personales datosdest,
+                                          public.areas,
+                                          public.areas areas2
+                                        WHERE 
+                                          documentos.remitente = directorio.id AND
+                                          documentos.id = correspondencia.id_docto AND
+                                          correspondencia.destinatario = directoriodest.id AND
+                                          directorio.id_dp = datos_personales.id AND
+                                          nombredoc.id = correspondencia.tipo AND
+                                          nombretipo.id = documentos.tipo_docto AND
+                                          directoriodest.id_dp = datosdest.id AND
+                                          directoriodest.id_area = areas2.id AND
+                                          areas.id = directorio.id_area AND
+                                          directoriodest.id_area = $id_area AND
+                                          correspondencia.estado_acuse = 0  AND 
+                                          (documentos.fecha between '$fecha1' and '$fecha2')  AND
+                                          documentos.estado = 1 AND
+                                          areas.id = $area_rem  AND
+                                          areas2.id = $area_dest
+                                          order by documentos.id desc";
+                              }   
+  
+
+
+                             // echo $query;                               
                                 $rem = Yii::app()->db->createCommand($sql2)->queryRow();
                               $i=1;
                               ?>
@@ -106,50 +352,7 @@
                                                   
 
 
-                                                    $query ="SELECT 
-  documentos.documento, 
-  documentos.fecha, 
-  documentos.asunto, 
-  correspondencia.tipo, 
-  correspondencia.fecha_acuse, 
-  nombredoc.nombre as nomdoc,
-  nombretipo.nombre as nomdoc2, 
-  directorio.cargo, 
-  datos_personales.nombre as nombrerem, 
-  datos_personales.apellido_p as apprem, 
-  datos_personales.apellido_m as apmrem, 
-  datosdest.nombre as nombredest, 
-  datosdest.apellido_p as appdest, 
-  datosdest.apellido_m as apmdest,  
-  directoriodest.cargo as cargodest,
-  areas.nombre as nombrearea,
-  areas2.nombre as nombreareadest
-FROM 
-  public.documentos, 
-  public.correspondencia, 
-  public.directorio, 
-  public.tipo_doc nombredoc,
-  public.tipo_copia nombretipo,  
-  public.datos_personales, 
-  public.directorio directoriodest, 
-  public.datos_personales datosdest,
-  public.areas,
-  public.areas areas2
-WHERE 
-  documentos.remitente = directorio.id AND
-  documentos.id = correspondencia.id_docto AND
-  correspondencia.destinatario = directoriodest.id AND
-  directorio.id_dp = datos_personales.id AND
-  nombredoc.id = correspondencia.tipo AND
-  nombretipo.id = documentos.tipo_docto AND
-  directoriodest.id_dp = datosdest.id AND
-  directoriodest.id_area = areas2.id AND
-  areas.id = directorio.id_area AND
-  directoriodest.id_area = $id_area AND
-  correspondencia.estado_acuse = 0  AND 
-  (documentos.fecha between '$fecha1' and '$fecha2')  AND
-  documentos.estado = 1
-  order by documentos.id desc";
+
 
                                                     $resultrem=Yii::app()->db->createCommand($query)->queryAll();
 $cuenta=0;

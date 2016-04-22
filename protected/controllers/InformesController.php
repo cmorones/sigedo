@@ -47,7 +47,7 @@ public function actionReqPto() {
 
 
 
-if(empty($_POST['fecha1']) && empty($_POST['fecha2'])  && empty($_POST['fecha2'])){
+if(empty($_POST['fecha1']) && empty($_POST['fecha2'])  && empty($_POST['fecha2']) ){
 echo "Debe seleccionar un criterio";
 
 }
@@ -57,7 +57,10 @@ $this->renderPartial('_porconfirmar', array(
 		//	'model'=>$model,
 			'fecha1'=>$_POST['fecha1'],
 			'fecha2'=>$_POST['fecha2'],
-			'id_tipo'=>$_POST['id_tipo']));
+			'id_tipo'=>$_POST['id_tipo'],
+			'area_rem'=>$_POST['area_rem'],
+			'area_dest'=>$_POST['area_dest'],
+			));
 }
 elseif($_POST['id_tipo']==1){
 
