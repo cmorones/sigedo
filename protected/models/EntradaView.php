@@ -120,18 +120,57 @@ class EntradaView extends CActiveRecord
 	//	$imagen="validado.png";
 
 
+$valido=0;
+
 
   $sql = "SELECT count(id) as cuenta from turnos where id_corresp=$this->id"; 
   $turnos = Yii::app()->db->createCommand($sql)->queryRow();
 
 
+  if($turnos['cuenta']>0){
 
-		if($this->estado_acuse=='1'){
-		$imagen="<div class=\"label label-success\"><i class=\"fa fa-check-circle\"></i> CONFIRMADO</button></div>";
+
+  	$arg_list =ARRAY();
+
+$q = "SELECT estado_sol FROM turnos where id_corresp=$this->id";
+
+
+
+$cmd = Yii::app()->db->createCommand($q);
+//$cmd->getText();
+
+$resultado = $cmd->query();
+foreach ($resultado as $row) {
+
+
+$arg_list[] =$row['estado_sol'];
+
+}
+
+
+
+if(in_array(0, $arg_list)){
+  $valido = 0;
+}else{
+  $valido = 1;
+}
+
+  }
+
+  		if($this->estado_acuse=='0'){
+		$imagen="<div class=\"label label-danger\"><i class=\"fa fa-check-circle\"></i> SIN CONFIRMAR</button></div>";
 		}
 
-		if($this->estado_acuse=='1' && $turnos['cuenta']>0){
-		$imagen="<div class=\"label label-warning\"><i class=\"fa fa-check-circle\"></i> TURNADO</button></div>";
+		if($this->estado_acuse=='1'){
+		$imagen="<div class=\"label label-info\"><i class=\"fa fa-check-circle\"></i> CONFIRMADO</button></div>";
+		}
+
+		if($this->estado_acuse=='1' && $valido==0){
+		$imagen="<div class=\"label label-warning\"><i class=\"fa fa-check-circle\"></i> TURNADO SIN SOLUCION</button></div>";
+		}
+
+		if($this->estado_acuse=='1' && $valido==1){
+		$imagen="<div class=\"label label-success\"><i class=\"fa fa-check-circle\"></i> TURNADO y SOLUCIONADO</button></div>";
 		}
 
 		
