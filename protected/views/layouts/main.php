@@ -401,19 +401,7 @@ if($perfil==2){  //Usuarios Direccion General
 								</ul>
 								</li>
 								
-								<li>
-									<a href="#" class="js-sub-menu-toggle">
-										<i class="fa fa-edit fw"></i><span class="text">INFORMES</span>
-										<i class="toggle-icon fa fa-angle-left"></i>
-									</a>
-									<ul class="sub-menu ">
-										<li><a href="<?php echo CController::createUrl('informes/index'); ?>"><span class="text">Informe Correspondencia por criterios</span></a></li>
-										<!--<li><a href="<?php echo CController::createUrl('informes/area'); ?>"><span class="text">Informe correspondencia de Entrada</span></a></li>
-										
-										<!--<li><a href="<?php echo CController::createUrl('informes/turnos'); ?>"><span class="text">Informe correspondencia de Turnos</span></a></li>-->
-										
-									</ul>
-								</li>
+							
 								
 							
 								
@@ -565,19 +553,7 @@ if($perfil==4){
 									</ul>
 								</li>
 
-									<li>
-									<a href="#" class="js-sub-menu-toggle">
-										<i class="fa fa-edit fw"></i><span class="text">INFORMES</span>
-										<i class="toggle-icon fa fa-angle-left"></i>
-									</a>
-									<ul class="sub-menu ">
-										<li><a href="<?php echo CController::createUrl('informes/index'); ?>"><span class="text">Informe Correspondencia por criterios</span></a></li>
-										<!--<li><a href="<?php echo CController::createUrl('informes/area'); ?>"><span class="text">Informe correspondencia de Entrada</span></a></li>
-										
-										<!--<li><a href="<?php echo CController::createUrl('informes/turnos'); ?>"><span class="text">Informe correspondencia de Turnos</span></a></li>-->
-										
-									</ul>
-								</li>
+									
 								<!--<li>
 									<a href="#" class="js-sub-menu-toggle">
 										<i class="fa fa-edit fw"></i><span class="text">INFORMES</span>

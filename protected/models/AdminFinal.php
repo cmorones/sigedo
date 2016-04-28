@@ -185,7 +185,7 @@ $valido=0;
   $sql = "SELECT count(id) as cuenta from turnos where id_corresp=$this->id"; 
   $turnos = Yii::app()->db->createCommand($sql)->queryRow();
 
-
+  $turnado = intval($turnos['cuenta']);
   if($turnos['cuenta']>0){
 
 
@@ -220,15 +220,15 @@ if(in_array(0, $arg_list)){
 		$imagen="<div class=\"label label-danger\"><i class=\"fa fa-check-circle\"></i> SIN CONFIRMAR</button></div>";
 		}
 
-		if($this->estado_acuse=='1'){
+		if($this->estado_acuse=='1' && $turnado==0){
 		$imagen="<div class=\"label label-info\"><i class=\"fa fa-check-circle\"></i> CONFIRMADO</button></div>";
 		}
 
-		if($this->estado_acuse=='1' && $valido==0){
+		if($this->estado_acuse=='1' && $turnado>0 && $valido==0 ){
 		$imagen="<div class=\"label label-warning\"><i class=\"fa fa-check-circle\"></i> TURNADO SIN SOLUCION</button></div>";
 		}
 
-		if($this->estado_acuse=='1' && $valido==1){
+		if($this->estado_acuse=='1' && $turnado > 0 && $valido==1){
 		$imagen="<div class=\"label label-success\"><i class=\"fa fa-check-circle\"></i> TURNADO y SOLUCIONADO</button></div>";
 		}
 

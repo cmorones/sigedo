@@ -4279,3 +4279,21 @@ Stack trace:
 REQUEST_URI=/sigedo/fonts/lato-lig-webfont.ttf?1383488388
 HTTP_REFERER=http://localhost/sigedo/css/main.css
 ---
+2016/04/28 14:01:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "fonts/lato-lig-webfont.woff"' in /opt/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts/lato-lig-...')
+#1 /opt/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/html/sigedo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sigedo/fonts/lato-lig-webfont.woff?1383488388
+HTTP_REFERER=http://localhost/sigedo/css/main2.css
+---
+2016/04/28 14:01:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "fonts/lato-lig-webfont.ttf"' in /opt/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('fonts/lato-lig-...')
+#1 /opt/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/html/sigedo/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sigedo/fonts/lato-lig-webfont.ttf?1383488388
+HTTP_REFERER=http://localhost/sigedo/css/main2.css
+---
