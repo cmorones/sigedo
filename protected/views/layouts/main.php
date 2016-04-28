@@ -352,6 +352,80 @@
  if (!Yii::app()->user->isGuest) {
 $perfil = Yii::app()->user->perfil;
 $id_area = Yii::app()->user->id_area;
+if($perfil==2){  //Usuarios Direccion General
+?>
+						<!-- main-nav -->
+						<nav class="main-nav">
+							<ul class="main-menu">
+								<li class="active">
+									<a href="#" class="js-sub-menu-toggle">
+										<i class="fa fa-dashboard fa-fw"></i><span class="text">INICIO (<?=$id_area?>)</span>
+										<i class="toggle-icon fa fa-angle-down"></i>
+									</a>
+									<ul class="sub-menu open">
+										<li class="active"><a href="<?php echo CController::createUrl('main/index'); ?>"><span class="text">Estadisticas</span></a></li>
+									
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle">
+										<i class="fa fa-clipboard fa-fw"></i><span class="text">CORRESPONDENCIA</span>
+										<i class="toggle-icon fa fa-angle-left"></i>
+									</a>
+									<ul class="sub-menu ">
+										<li><a href="<?php echo CController::createUrl('documentos/create'); ?>"><span class="text">Agregar </span></a></li>
+										<li><a href="<?php echo CController::createUrl('documentos/circular'); ?>"><span class="text">Agregar Circular </span></a></li>
+										
+										
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle">
+										<i class="fa fa-bar-chart-o fw"></i><span class="text">BANDEJA</span>
+										<i class="toggle-icon fa fa-angle-left"></i>
+									</a>
+									<ul class="sub-menu ">
+										<li><a href="<?php echo CController::createUrl('correspondencia/confirmar'); ?>"><span class="text">Bandeja por confirmar</span></a></li>
+										<li><a href="<?php echo CController::createUrl('entradaView/admin'); ?>"><span class="text">Bandeja de Entrada</span></a></li>
+										<li><a href="<?php echo CController::createUrl('salidaView/admin'); ?>"><span class="text">Bandeja de Salida</span></a></li>
+										<li><a href="<?php echo CController::createUrl('turnosList/admin'); ?>"><span class="text">Bandeja de Turnos</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle">
+										<i class="fa fa-list-alt fw"></i><span class="text">CONSULTAS</span>
+										<i class="toggle-icon fa fa-angle-left"></i>
+									</a>
+									<ul class="sub-menu ">
+										<li><a href="<?php echo CController::createUrl('adminFinal/cons'); ?>"><span class="text">Consulta General</span></a></li>
+								</ul>
+								</li>
+								
+								<li>
+									<a href="#" class="js-sub-menu-toggle">
+										<i class="fa fa-edit fw"></i><span class="text">INFORMES</span>
+										<i class="toggle-icon fa fa-angle-left"></i>
+									</a>
+									<ul class="sub-menu ">
+										<li><a href="<?php echo CController::createUrl('informes/index'); ?>"><span class="text">Informe Correspondencia por criterios</span></a></li>
+										<!--<li><a href="<?php echo CController::createUrl('informes/area'); ?>"><span class="text">Informe correspondencia de Entrada</span></a></li>
+										
+										<!--<li><a href="<?php echo CController::createUrl('informes/turnos'); ?>"><span class="text">Informe correspondencia de Turnos</span></a></li>-->
+										
+									</ul>
+								</li>
+								
+							
+								
+								
+								
+							</ul>
+						</nav>
+
+						<?php
+
+}
+
 
 if($perfil==4){
 ?>

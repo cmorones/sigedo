@@ -55,7 +55,7 @@ class AdminFinal extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, id_area, area_des, tipo, tipo_docto', 'numerical', 'integerOnly'=>true),
+			array('id, estado_acuse, id_area, area_des, tipo, tipo_docto', 'numerical', 'integerOnly'=>true),
 			array('cargo, cargo_des', 'length', 'max'=>300),
 			array('nombre, apellido_p, apellido_m, nombre_des, apellidop_des, apellidom_des', 'length', 'max'=>200),
 			array('documento, asunto, fecha', 'safe'),
@@ -87,8 +87,9 @@ class AdminFinal extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'estado_acuse' => 'Estado',
 			'documento' => 'Documento',
-			'id_area' => 'Id Area',
+			'id_area' => 'Area Remitente',
 			'cargo' => 'Cargo',
 			'cargo_des' => 'Cargo Des',
 			'area_des' => 'Area Des',
@@ -112,7 +113,7 @@ class AdminFinal extends CActiveRecord
 	public function search()
 	{
 		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+		// should not be searched. $id_area = Yii::app()->user->id_area;
 
 		$criteria=new CDbCriteria;
 
@@ -136,6 +137,106 @@ class AdminFinal extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination' => array('pageSize' => 20),
 		));
 	}
+
+	public function search2()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched. $id_area = Yii::app()->user->id_area;
+
+		$id_area = Yii::app()->user->id_area;
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('documento',$this->documento,true);
+		$criteria->compare('id_area',$this->id_area);
+		$criteria->compare('cargo',$this->cargo,true);
+		$criteria->compare('cargo_des',$this->cargo_des,true);
+		$criteria->compare('area_des',$id_area);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('apellido_p',$this->apellido_p,true);
+		$criteria->compare('apellido_m',$this->apellido_m,true);
+		$criteria->compare('nombre_des',$this->nombre_des,true);
+		$criteria->compare('apellidop_des',$this->apellidop_des,true);
+		$criteria->compare('apellidom_des',$this->apellidom_des,true);
+		$criteria->compare('tipo',$this->tipo);
+		$criteria->compare('tipo_docto',$this->tipo_docto);
+		$criteria->compare('asunto',$this->asunto,true);
+		$criteria->compare('fecha',$this->fecha,true);
+		$criteria->order = 'fecha desc';
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'pagination' => array('pageSize' => 20),
+		));
+	}
+
+	public function getImagen(){
+
+	//	$imagen="validado.png";
+
+
+$valido=0;
+
+
+  $sql = "SELECT count(id) as cuenta from turnos where id_corresp=$this->id"; 
+  $turnos = Yii::app()->db->createCommand($sql)->queryRow();
+
+
+  if($turnos['cuenta']>0){
+
+
+  	$arg_list =ARRAY();
+
+$q = "SELECT estado_sol FROM turnos where id_corresp=$this->id";
+
+
+
+$cmd = Yii::app()->db->createCommand($q);
+//$cmd->getText();
+
+$resultado = $cmd->query();
+foreach ($resultado as $row) {
+
+
+$arg_list[] =$row['estado_sol'];
+
+}
+
+
+
+if(in_array(0, $arg_list)){
+  $valido = 0;
+}else{
+  $valido = 1;
+}
+
+  }
+
+  		if($this->estado_acuse=='0'){
+		$imagen="<div class=\"label label-danger\"><i class=\"fa fa-check-circle\"></i> SIN CONFIRMAR</button></div>";
+		}
+
+		if($this->estado_acuse=='1'){
+		$imagen="<div class=\"label label-info\"><i class=\"fa fa-check-circle\"></i> CONFIRMADO</button></div>";
+		}
+
+		if($this->estado_acuse=='1' && $valido==0){
+		$imagen="<div class=\"label label-warning\"><i class=\"fa fa-check-circle\"></i> TURNADO SIN SOLUCION</button></div>";
+		}
+
+		if($this->estado_acuse=='1' && $valido==1){
+		$imagen="<div class=\"label label-success\"><i class=\"fa fa-check-circle\"></i> TURNADO y SOLUCIONADO</button></div>";
+		}
+
+		
+
+
+		return $imagen;
+
+		}
+
 }

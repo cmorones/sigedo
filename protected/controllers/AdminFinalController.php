@@ -32,7 +32,7 @@ class AdminFinalController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','cons'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -133,12 +133,24 @@ class AdminFinalController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new AdminFinal('search');
+		$model=new AdminFinal('search2');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['AdminFinal']))
 			$model->attributes=$_GET['AdminFinal'];
 
 		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+		public function actionCons()
+	{
+		$model=new AdminFinal('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['AdminFinal']))
+			$model->attributes=$_GET['AdminFinal'];
+
+		$this->render('cons',array(
 			'model'=>$model,
 		));
 	}
