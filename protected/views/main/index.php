@@ -27,7 +27,7 @@
                             <div class="col-md-4 ">
                                 <ul class="breadcrumb">
                                     <li><i class="fa fa-home"></i><a href="#">Inicio</a></li>
-                                    <li class="active">Principal</li>
+                                    <li class="active">Principal Cesar</li>
                                 </ul>
                             </div>
                             <div class="col-md-8 ">

@@ -54,6 +54,14 @@
 				"buffer_size": 5636,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
+			"settings":
+			{
+				"buffer_size": 83975,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -242,7 +250,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -272,7 +280,7 @@
 						"translation.y": 3366.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -288,8 +296,8 @@
 						"selection":
 						[
 							[
-								1314,
-								1314
+								567,
+								567
 							]
 						],
 						"settings":
@@ -299,7 +307,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 396.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 83975,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7044,
+								7044
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2640.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -362,9 +400,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "sitio",
 		"selected_items":
 		[
+			[
+				"sitio",
+				"/var/www/html/sitio/sitio.sublime-project"
+			],
 			[
 				"",
 				"/var/www/html/silac/protected/views/catMatReact/lab.sublime-project"
