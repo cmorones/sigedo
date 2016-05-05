@@ -40,18 +40,18 @@
 	"buffers":
 	[
 		{
-			"file": "sigedo.sublime-project",
+			"file": "/home/cesar/Escritorio/sindicato/index.php",
 			"settings":
 			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
+				"buffer_size": 83915,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/views/correspondencia/confirmar.php",
+			"file": "protected/views/usuarios/admin.php",
 			"settings":
 			{
-				"buffer_size": 6045,
+				"buffer_size": 5636,
 				"line_ending": "Unix"
 			}
 		}
@@ -90,13 +90,39 @@
 	[
 		"/var/www/html/sigedo",
 		"/var/www/html/sigedo/protected",
+		"/var/www/html/sigedo/protected/controllers",
+		"/var/www/html/sigedo/protected/models",
 		"/var/www/html/sigedo/protected/views",
+		"/var/www/html/sigedo/protected/views/adminFinal",
 		"/var/www/html/sigedo/protected/views/correspondencia",
 		"/var/www/html/sigedo/protected/views/documentos",
-		"/var/www/html/sigedo/protected/views/salidaView"
+		"/var/www/html/sigedo/protected/views/layouts",
+		"/var/www/html/sigedo/protected/views/salidaView",
+		"/var/www/html/sigedo/protected/views/turnos",
+		"/var/www/html/sigedo/protected/views/turnosList",
+		"/var/www/html/sigedo/protected/views/usuarios"
 	],
 	"file_history":
 	[
+		"/var/www/html/sigiems/getGoogleData.php",
+		"/var/www/html/sigiems/login-google.php",
+		"/var/www/html/sigiems/clases/liberp/EnvioMail.php",
+		"/home/cesar/.cache/.fr-shNGlS/sindicato/index.php",
+		"/var/www/html/sigedo/protected/views/layouts/main.php",
+		"/var/www/html/sigedo/sigedo.sublime-project",
+		"/var/www/html/sigedo/protected/models/AdminFinal.php",
+		"/var/www/html/sigedo/protected/models/EntradaView.php",
+		"/home/cesar/Escritorio/cambio28042016/index.php",
+		"/home/cesar/Escritorio/cambio28042016/sindicato/index.php",
+		"/home/cesar/Escritorio/cambio28042016/sindicato/sindicato/index.php",
+		"/home/cesar/.cache/.fr-fWsuB0/sindicato/index.php",
+		"/home/cesar/Escritorio/sindicato/index.php",
+		"/var/www/html/sigedorespaldo/protected/views/entradaView/admin.php",
+		"/var/www/html/sigedorespaldo/protected/controllers/EntradaViewController.php",
+		"/var/www/html/sigedorespaldo/protected/models/EntradaView.php",
+		"/var/www/html/sigedo/protected/views/adminFinal/admin.php",
+		"/var/www/html/sigedo/protected/controllers/AdminFinalController.php",
+		"/var/www/html/sigedo/protected/views/adminFinal/cons.php",
 		"/var/www/html/sigedo/index.php",
 		"/var/www/html/sigedo/protected/controllers/DocumentosController.php",
 		"/var/www/html/basic/composer.json",
@@ -109,12 +135,7 @@
 		"/var/www/html/sigedo/protected/models/Documentos.php",
 		"/var/www/html/sigedo/protected/views/documentos/_form2.php",
 		"/var/www/html/sigedo/js/confirmar.js",
-		"/var/www/html/sigedo/sigedo.sublime-project",
-		"/var/www/html/sigedo/protected/views/layouts/main.php",
 		"/var/www/html/sigedo/protected/models/SalidaView.php",
-		"/var/www/html/sigedo/protected/models/AdminFinal.php",
-		"/var/www/html/sigedo/protected/controllers/AdminFinalController.php",
-		"/var/www/html/sigedo/protected/views/adminFinal/admin.php",
 		"/home/cesar/Descargas/registro_invitados.php",
 		"/home/cesar/Descargas/registro_ninos.php",
 		"/home/cesar/Descargas/index.php",
@@ -155,7 +176,6 @@
 		"/var/www/html/sigedo/protected/controllers/CorrespondenciaControllerresp.php",
 		"/home/cesar/Descargas/RadiacionUVB2015-radiacion_2015UVB.json",
 		"/var/www/html/sigedo/protected/views/documentos/_formupdate.php",
-		"/var/www/html/sigedo/protected/models/EntradaView.php",
 		"/var/www/html/sigedo/protected/controllers/MainController.php",
 		"/var/www/html/sigedo/protected/views/correspondencia/_form3.php",
 		"/var/www/html/sigedo/protected/views/turnosList/admin.php",
@@ -222,16 +242,16 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "sigedo.sublime-project",
+					"file": "/home/cesar/Escritorio/sindicato/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 45,
+						"buffer_size": 83915,
 						"regions":
 						{
 						},
@@ -244,30 +264,32 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3366.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "protected/views/correspondencia/confirmar.php",
+					"file": "protected/views/usuarios/admin.php",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 6045,
+						"buffer_size": 5636,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4750,
-								4505
+								1314,
+								1314
 							]
 						],
 						"settings":
@@ -277,10 +299,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1980.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -345,7 +367,7 @@
 		[
 			[
 				"",
-				"/var/www/html/silac/silac.sublime-project"
+				"/var/www/html/silac/protected/views/catMatReact/lab.sublime-project"
 			]
 		],
 		"width": 380.0
