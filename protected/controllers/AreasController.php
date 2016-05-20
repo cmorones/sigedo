@@ -170,4 +170,6 @@ class AreasController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	
 }

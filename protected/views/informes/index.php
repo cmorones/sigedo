@@ -353,8 +353,7 @@ echo CHtml::ajaxSubmitButton(
                                 <!-- END WIDGET TICKET TABLE -->
                             </div>
                             <!-- /main-content -->
-                       
-                            <div id="req_res02"></div>
+                          <div id="req_res02"></div>
                         </div>
 
 

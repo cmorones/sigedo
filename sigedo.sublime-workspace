@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"str_r",
+				"str_replace"
+			],
+			[
+				"html",
+				"htmlentities"
+			],
+			[
+				"ht",
+				"htmlentities"
+			],
+			[
+				"col",
+				"colspan	Attr"
+			],
+			[
 				"de",
 				"destinatario"
 			],
@@ -40,27 +60,76 @@
 	"buffers":
 	[
 		{
-			"file": "/home/cesar/Escritorio/sindicato/index.php",
+			"file": "protected/views/informes/_porconfirmar.php",
 			"settings":
 			{
-				"buffer_size": 83915,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/views/usuarios/admin.php",
-			"settings":
-			{
-				"buffer_size": 5636,
+				"buffer_size": 31005,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
+			"file": "protected/controllers/apiExcelController.php",
 			"settings":
 			{
-				"buffer_size": 83975,
-				"line_ending": "Windows"
+				"buffer_size": 6646,
+				"line_ending": "Unix",
+				"name": "apiExcel.php"
+			}
+		},
+		{
+			"file": "protected/views/informes/index.php",
+			"settings":
+			{
+				"buffer_size": 13128,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/informes/_entrada.php",
+			"settings":
+			{
+				"buffer_size": 12477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/layouts/main.php",
+			"settings":
+			{
+				"buffer_size": 30294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/excel.js",
+			"settings":
+			{
+				"buffer_size": 1653,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/models/Correspondencia.php",
+			"settings":
+			{
+				"buffer_size": 9016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/controllers/InformesController.php",
+			"settings":
+			{
+				"buffer_size": 5924,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/controllers/AreasController.php",
+			"settings":
+			{
+				"buffer_size": 4200,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -97,14 +166,16 @@
 	"expanded_folders":
 	[
 		"/var/www/html/sigedo",
+		"/var/www/html/sigedo/js",
 		"/var/www/html/sigedo/protected",
+		"/var/www/html/sigedo/protected/config",
 		"/var/www/html/sigedo/protected/controllers",
 		"/var/www/html/sigedo/protected/models",
 		"/var/www/html/sigedo/protected/views",
-		"/var/www/html/sigedo/protected/views/adminFinal",
 		"/var/www/html/sigedo/protected/views/correspondencia",
-		"/var/www/html/sigedo/protected/views/documentos",
+		"/var/www/html/sigedo/protected/views/informes",
 		"/var/www/html/sigedo/protected/views/layouts",
+		"/var/www/html/sigedo/protected/views/main",
 		"/var/www/html/sigedo/protected/views/salidaView",
 		"/var/www/html/sigedo/protected/views/turnos",
 		"/var/www/html/sigedo/protected/views/turnosList",
@@ -112,6 +183,9 @@
 	],
 	"file_history":
 	[
+		"/var/www/html/sigedo/protected/views/main/index.php",
+		"/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
+		"/home/cesar/Escritorio/sindicato/index.php",
 		"/var/www/html/sigiems/getGoogleData.php",
 		"/var/www/html/sigiems/login-google.php",
 		"/var/www/html/sigiems/clases/liberp/EnvioMail.php",
@@ -124,7 +198,6 @@
 		"/home/cesar/Escritorio/cambio28042016/sindicato/index.php",
 		"/home/cesar/Escritorio/cambio28042016/sindicato/sindicato/index.php",
 		"/home/cesar/.cache/.fr-fWsuB0/sindicato/index.php",
-		"/home/cesar/Escritorio/sindicato/index.php",
 		"/var/www/html/sigedorespaldo/protected/views/entradaView/admin.php",
 		"/var/www/html/sigedorespaldo/protected/controllers/EntradaViewController.php",
 		"/var/www/html/sigedorespaldo/protected/models/EntradaView.php",
@@ -158,7 +231,6 @@
 		"/var/www/html/sigedo/protected/views/documentos/create2.php",
 		"/var/www/html/sigedo/protected/views/informes/_turnos.php",
 		"/var/www/html/sigedo/protected/views/informes/_salida.php",
-		"/var/www/html/sigedo/protected/views/main/index.php",
 		"/var/www/html/sedeco/protected/views/site/page55.php",
 		"/var/www/html/sedeco/protected/views/site/page67.php",
 		"/var/www/html/sedeco/protected/controllers/ApipdfController.php",
@@ -218,6 +290,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"td",
 			"dropDownList",
 			"copiasIds",
 			"btnExport",
@@ -250,59 +323,179 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/cesar/Escritorio/sindicato/index.php",
+					"file": "protected/views/informes/_porconfirmar.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 83915,
+						"buffer_size": 31005,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								20481,
+								20481
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3366.0,
+						"translation.y": 6264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "protected/views/usuarios/admin.php",
-					"semi_transient": true,
+					"file": "protected/controllers/apiExcelController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5636,
+						"buffer_size": 6646,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								567,
-								567
+								432,
+								432
+							]
+						],
+						"settings":
+						{
+							"auto_name": "apiExcel.php",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "protected/views/informes/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13128,
+								13128
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6516.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "protected/views/informes/_entrada.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10703,
+								10703
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 27.0,
+						"translation.y": 3186.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "protected/views/layouts/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28559,
+								28559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 12659.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/excel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1653,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1140,
+								1140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -310,37 +503,94 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
+					"buffer": 6,
+					"file": "protected/models/Correspondencia.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 83975,
+						"buffer_size": 9016,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7044,
-								7044
+								8822,
+								8822
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2640.0,
+						"translation.y": 3909.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "protected/controllers/InformesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "protected/controllers/AreasController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4197,
+								4197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 2808.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -400,16 +650,20 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "sitio",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"sitio",
-				"/var/www/html/sitio/sitio.sublime-project"
+				"",
+				"/var/www/html/sedeco/sedeco.sublime-project"
 			],
 			[
-				"",
-				"/var/www/html/silac/protected/views/catMatReact/lab.sublime-project"
+				"spdg",
+				"/var/www/html/spdgm/spdgm.sublime-workspace"
+			],
+			[
+				"sitio",
+				"/var/www/html/sitio/sitio.sublime-project"
 			]
 		],
 		"width": 380.0

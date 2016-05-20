@@ -738,6 +738,7 @@ if($perfil==4){
         $cs->registerScriptFile($baseUrl.'/js/king-components.js');
         $cs->registerScriptFile($baseUrl.'/js/jquery-confirm.js');
          $cs->registerScriptFile($baseUrl.'/css/lib/alertify.js');
+         $cs->registerScriptFile($baseUrl.'/js/excel.js');
 
 
 

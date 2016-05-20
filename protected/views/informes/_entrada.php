@@ -45,6 +45,26 @@
                                                                   directorio.id_area = $id_area";
                                 $rem = Yii::app()->db->createCommand($sql2)->queryRow();
                               $i=1;
+
+
+                 if($area_rem=='false'){
+                    $nombre_area_rem = 'TODOS';
+                  }else{
+                    $sql = "SELECT nombre from areas where id=$area_rem"; 
+                    $nom = Yii::app()->db->createCommand($sql)->queryRow();
+                    $nombre_area_rem = $nom['nombre'];
+
+                  }
+
+                   if($area_dest=='false'){
+                    $nombre_area_dest = 'TODOS';
+                  }else{
+                    $sql = "SELECT nombre from areas where id=$area_dest"; 
+                    $nom = Yii::app()->db->createCommand($sql)->queryRow();
+                    $nombre_area_dest = $nom['nombre'];
+
+                  }
+
                               ?>
 
                                 <div class="row">
@@ -56,17 +76,37 @@
                                                
                                                 <div class="btn-group widget-header-toolbar">
                                                     <div class="control-inline toolbar-item-group">
-                                                      
-                                                   <div id="btnExport"><?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/excel.png')?></div>
+                                                        <?   echo CHtml::link(CHtml::image(Yii::app()->request->baseUrl . '/images/excel.png'),array('apiExcel/Entrada?fecha1='.$fecha1.'&fecha2='.$fecha2.'&id_tipo='.$id_tipo.'&area_rem='.$area_rem.'&area_dest='.$area_dest)); ?>
+                                                    
+                                                  
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="widget-content">
+                                           <div class="widget-content">
                                             <div id="datos" >
                                                 <table id="visit-stat-table" class="table table-sorting table-striped table-hover datatable">
                                                     
 													 <thead>
+                              <tr>
+                             <th colspan="2">Fecha: </th>
+                             <th colspan="4">Del <?=$fecha1?> al <?=$fecha2?></th>
+                           </tr>
+                           <tr>
+                             <th colspan="2">Area Remitente:</th>
+                             <th colspan="4"><?=$nombre_area_rem?></th>
+                           </tr>
+                           <tr>
+                             <th colspan="2">Area Destinatario:</th>
+                             <th colspan="4"><?=$nombre_area_dest?></th>
+                           </tr>
+                           <tr>
+                             <th colspan="2">Numero de Oficios Por Confirmar: </th>
+                             <th colspan="4"><?=$rem['cuenta']?></th>
+                           </tr>
+                           <tr>
+                             <td></td>
+                           </tr>
                                                         <tr>
                                                             <th></th>
                                                             <th ></th>
@@ -167,7 +207,7 @@ $cuenta=0;
                                                             <td><?=$value['fecha']?></td>
                                                            <td><?=$value['nomdoc']?></td>
                                                             <td><?=$value['nomdoc2']?></td>
-                                                            <td><?=$value['asunto']?></td>
+                                                            <td><?=str_replace("“", '-',str_replace("”", '-', str_replace("\"", '-', $value['asunto'])))?></td>
                                                              <td><?=$value['nombrearea']?></td>
                                                             <td><?=$value['cargo']?></td>
                                                              <td><?=$value['nombrerem']?> <?=$value['apprem']?> <?=$value['apmrem']?></td>
@@ -202,42 +242,4 @@ $cuenta=0;
                     </div>
                     <!-- /content-wrapper -->
 
-                     <script charset="UTF-8">
-    $(document).ready(function() {
-    $("#btnExport").click(function(e) {
-        //getting values of current time for generating the file name
-        var dt = new Date();
-        var day = dt.getDate();
-        var month = dt.getMonth() + 1;
-        var year = dt.getFullYear();
-        var hour = dt.getHours();
-        var mins = dt.getMinutes();
-        var postfix = day + "." + month + "." + year + "_" + hour + "." + mins;
-        //creating a temporary HTML link element (they support setting file names)
-        var a = document.createElement('a');
-        //getting data from our div that contains the HTML table
-
-        var data_type = 'data:application/vnd.ms-excel;charset=UTF-8;base64';
-        
-        var table_div = document.getElementById('datos');
-        var table_html = table_div.outerHTML.replace(/ /g, '%20');
-        a.charset ="UTF-8";
-        a.href = data_type + ', ' + ces(table_html);
-        //setting the file name
-        a.download = 'porconfirmar_' + postfix + '.xlsx';
-        //triggering the function
-        a.click();
-        //just in case, prevent default behaviour
-        e.preventDefault();
-    });
-});
-
-   function ces(s) {
-                                    while (s.indexOf('â') != -1) s = s.replace('â','a');
-                                    while (s.indexOf('ş') != -1) s = s.replace('ş','s');
-                                    while (s.indexOf('ă') != -1) s = s.replace('ă','a');
-                                    while (s.indexOf('ţ') != -1) s = s.replace('ţ','t');
-                                    return window.btoa(unescape(s))
-                                }
-
-    </script>
+   
