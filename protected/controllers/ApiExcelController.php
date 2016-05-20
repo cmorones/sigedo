@@ -136,6 +136,7 @@ class ApiExcelController extends Controller
                                                             <th>Area </th>
                                                             <th>Cargo</th>
                                                             <th>Nombre</th>
+                                                            <th>Estado Acuse</th>
                                                          
                                                         
                                                         </tr>
