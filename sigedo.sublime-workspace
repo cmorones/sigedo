@@ -63,24 +63,26 @@
 			"file": "protected/views/informes/_porconfirmar.php",
 			"settings":
 			{
-				"buffer_size": 31005,
+				"buffer_size": 30975,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "protected/controllers/apiExcelController.php",
+			"file": "protected/controllers/ApiExcelController.php",
 			"settings":
 			{
-				"buffer_size": 6646,
-				"line_ending": "Unix",
-				"name": "apiExcel.php"
+				"buffer_size": 69402,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "protected/views/informes/index.php",
+			"contents": "    <!-- content-wrapper -->\n                    <div class=\"col-md-10 content-wrapper\">\n                  \n                        <!-- main -->\n                        <div class=\"content\">\n                            <div class=\"main-header\">\n                                <h2><?php //echo $area; ?></h2>\n                                <em>Informacion Estadistica del Área</em>\n                            </div>\n                            <div class=\"main-content\">\n                                <div class=\"row\">\n                                    <div class=\"col-md-9\">\n                                        <!-- WIDGET NO HEADER -->\n                                        <div class=\"widget widget-hide-header\">\n                                            <div class=\"widget-header hide\">\n                                                <h3>Summary Info</h3>\n                                            </div>\n                                  \n                                        </div>\n                                        <!-- WIDGET NO HEADER -->\n                                    </div>\n                                   \n                                </div>\n\n                            <?php\n\n                            /*  $id_area = Yii::app()->user->id_area;\n\n                               $sql2 =\"SELECT \n                                                                  count(correspondencia.id) as cuenta \n                                                                FROM \n                                                                  public.correspondencia, \n                                                                  public.documentos, \n                                                                  public.directorio, \n                                                                  public.directorio as direm\n                                                                 \n                                                                WHERE \n                                                                  correspondencia.destinatario = directorio.id_area AND\n                                                                  documentos.id = correspondencia.id_docto AND\n                                                                  documentos.remitente = direm.id AND\n                                                                  documentos.estado = 1 AND\n                                                                  correspondencia.estado = 1 AND\n                                                                  directorio.id_area = $id_area\";\n                                $rem = Yii::app()->db->createCommand($sql2)->queryRow();\n*/\n                              ?>\n\n                                <div class=\"row\">\n                                    <div class=\"col-md-12\">\n                                        <!-- WIDGET TABLE -->\n                                        <div class=\"widget widget-table\">\n                                            <div class=\"widget-header\">\n                                                <h3><i class=\"fa fa-desktop\"></i> Informe de correspondencia por criterios</h3>\n                                                <div class=\"btn-group widget-header-toolbar\">\n                                                    <a href=\"#\" title=\"Focus\" class=\"btn-borderless btn-focus\"><i class=\"fa fa-eye\"></i></a>\n                                                    <a href=\"#\" title=\"Expand/Collapse\" class=\"btn-borderless btn-toggle-expand\"><i class=\"fa fa-chevron-up\"></i></a>\n                                                    <a href=\"#\" title=\"Remove\" class=\"btn-borderless btn-remove\"><i class=\"fa fa-times\"></i></a>\n                                                </div>\n                                                <!--<div class=\"btn-group widget-header-toolbar\">\n                                                    <div class=\"control-inline toolbar-item-group\">\n                                                        <span class=\"control-title\">Total de oficios:</span>\n                                                        <div class=\"label label-success\"><i class=\"fa fa-caret-up\"></i><? //=$rem['cuenta'];?></div>\n                                                    </div>\n                                                </div>-->\n                                            </div>\n                                            <div class=\"widget-content\">\n                                               \n\n                                            <div class=\"form\">\n<?php echo CHtml::beginForm(); ?>\n\n\n <div class=\"row\">\n      <div class=\"col-md-12\">\n\n<?php echo CHtml::label('Fecha de Inicio', 'fecha1'); ?>\n<?php $this->widget('zii.widgets.jui.CJuiDatePicker',\n    array(\n        // you must specify name or model/attribute\n        //'model'=>$model,\n        //'attribute'=>'projectDateStart',\n        'name'=>'fecha1',\n\n        // optional: what's the initial value/date?\n        //'value' => $model->projectDateStart\n        //'value' => '08/20/2010',\n\n        // optional: change the language\n        //'language' => 'de',\n        //'language' => 'fr',\n        //'language' => 'es',\n        'language' => 'es',\n\n        /* optional: change visual\n         * themeUrl: \"where the themes for this widget are located?\"\n         * theme: theme name. Note that there must be a folder under themeUrl with the theme name\n         * cssFile: specifies the css file name under the theme folder. You may specify a\n         *          single filename or an array of filenames\n         * try http://jqueryui.com/themeroller/\n        */\n    //  'themeUrl' => Yii::app()->baseUrl.'/css/pool' ,\n    //  'theme'=>'pool',    //try 'bee' also to see the changes\n    //  'cssFile'=>array('jquery-ui.css' /*,anotherfile.css, etc.css*/),\n\n\n        //  optional: jquery Datepicker options\n        'options' => array(\n            // how to change the input format? see http://docs.jquery.com/UI/Datepicker/formatDate\n            'dateFormat'=>'yy-mm-dd',\n            //'yearRange' => '2013:2014',\n\n\n            // user will be able to change month and year\n            'changeMonth' => 'true',\n            'changeYear' => 'true',\n\n            // shows the button panel under the calendar (buttons like \"today\" and \"done\")\n            'showButtonPanel' => 'true',\n\n            // this is useful to allow only valid chars in the input field, according to dateFormat\n            'constrainInput' => 'false',\n\n            // speed at which the datepicker appears, time in ms or \"slow\", \"normal\" or \"fast\"\n            'duration'=>'fast',\n\n            // animation effect, see http://docs.jquery.com/UI/Effects\n            'showAnim' =>'slide',\n        ),\n\n\n        // optional: html options will affect the input element, not the datepicker widget itself\n        'htmlOptions'=>array(\n        /*'style'=>'height:30px;\n            background:#ffbf00;\n            color:#00a;\n            font-weight:bold;\n            font-size:0.9em;\n            border: 1px solid #A80;\n            padding-left: 4px;'*/\n        )\n    )\n);\n ?>\n\n<?php echo CHtml::label('Fecha de Termino', 'fecha2'); ?>\n <?php $this->widget('zii.widgets.jui.CJuiDatePicker',\n    array(\n        // you must specify name or model/attribute\n        //'model'=>$model,\n        //'attribute'=>'projectDateStart',\n        'name'=>'fecha2',\n\n        // optional: what's the initial value/date?\n        //'value' => $model->projectDateStart\n        //'value' => '08/20/2010',\n\n        // optional: change the language\n        //'language' => 'de',\n        //'language' => 'fr',\n        //'language' => 'es',\n        'language' => 'es',\n\n        /* optional: change visual\n         * themeUrl: \"where the themes for this widget are located?\"\n         * theme: theme name. Note that there must be a folder under themeUrl with the theme name\n         * cssFile: specifies the css file name under the theme folder. You may specify a\n         *          single filename or an array of filenames\n         * try http://jqueryui.com/themeroller/\n        */\n    //  'themeUrl' => Yii::app()->baseUrl.'/css/pool' ,\n    //  'theme'=>'pool',    //try 'bee' also to see the changes\n    //  'cssFile'=>array('jquery-ui.css' /*,anotherfile.css, etc.css*/),\n\n\n        //  optional: jquery Datepicker options\n        'options' => array(\n            // how to change the input format? see http://docs.jquery.com/UI/Datepicker/formatDate\n            'dateFormat'=>'yy-mm-dd',\n\n            // user will be able to change month and year\n            'changeMonth' => 'true',\n            'changeYear' => 'true',\n\n            // shows the button panel under the calendar (buttons like \"today\" and \"done\")\n            'showButtonPanel' => 'true',\n\n            // this is useful to allow only valid chars in the input field, according to dateFormat\n            'constrainInput' => 'false',\n\n            // speed at which the datepicker appears, time in ms or \"slow\", \"normal\" or \"fast\"\n            'duration'=>'fast',\n\n            // animation effect, see http://docs.jquery.com/UI/Effects\n            'showAnim' =>'slide',\n        ),\n\n\n        // optional: html options will affect the input element, not the datepicker widget itself\n        'htmlOptions'=>array(\n        /*'style'=>'height:30px;\n            background:#ffbf00;\n            color:#00a;\n            font-weight:bold;\n            font-size:0.9em;\n            border: 1px solid #A80;\n            padding-left: 4px;'*/\n        )\n    )\n);\n ?>\n</div>\n\n</div>\n\n<div class=\"row\">\n <div class=\"col-md-2\">\n <?php  echo CHtml::label('Tipo de Informe','terms'); ?>\n </div>\n <div class=\"col-md-6\">\n    <?php \n\n      //  $partidas[0] = \"TODOS\";\n    $partidas[0] = \"Bandeja Por Confirmar\";\n    $partidas[1] = \"Bandeja de Entrada\";\n    $partidas[2] = \"Bandeja de Salida\";\n   // $partidas[3] = \"Bandeja de Turnos\";\n\n\n    //echo CHtml::label('Tipo de Informe','terms'); ?>\n<?php $this->widget('ext.select2.ESelect2',array(\n  'name'=>'id_tipo',\n   'options'=>array(\n                      //  'placeholder' => 'Seleccionar Tipo de Informe', \n                    'width'=>'100%',\n                    'maximumSelectionSize'=>5,\n                    ),\n  'data' => $partidas,\n)); ?>\n</div>\n</div>\n\n<div class=\"row\">\n <div class=\"col-md-2\">\n <?php  echo CHtml::label('Area Remitente','terms'); ?>\n </div>\n <div class=\"col-md-6\">\n    <?php \n\n     $query ='SELECT \n  areas.id, \n  areas.nombre\nFROM \n  public.areas\nWHERE \n  areas.status = 1 ';\n\n        $resultrem=Yii::app()->db->createCommand($query)->queryAll();\n\n         $remitentes['false'] = 'Todos';\n\n         foreach ($resultrem as $value) {\n                    $remitentes[$value['id']] = \"$value[nombre]\";\n                }\n\n\n    //echo CHtml::label('Tipo de Informe','terms'); ?>\n<?php $this->widget('ext.select2.ESelect2',array(\n  'name'=>'area_rem',\n   'options'=>array(\n                      //  'placeholder' => 'Seleccionar Tipo de Informe', \n                    'width'=>'100%',\n                    'maximumSelectionSize'=>5,\n                      'ajax' => array(\n                                    'url' => 'CController::createUrl('presupuesto/trimestre'),\n                                    'data' => 'js: function(term,page) {\n                                            return {\n                                                q: term, \n                                                page_limit: 10,\n                                                apikey: \"e5mnmyr86jzb9dhae3ksgd73\" // Please create your own key!\n                                            };\n                                        }',\n                                    'results' => 'js: function(data,page){\n                                        return {results: data.movies};\n                                    }',\n                                ),\n                   \n                    ),\n  'data' => $remitentes,\n)); ?>\n</div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-2\">\n  \n  <?php echo CHtml::label('Remitentes', 'remitentes'); ?>\n\n\n\n</div>\n<div class=\"col-md-6\">\n   <?php\n     echo CHtml::dropDownList('list_rem','', array());\n   ?>\n</div>\n  </div>\n</div>\n\n<div class=\"row\">\n <div class=\"col-md-2\">\n <?php  echo CHtml::label('Area Destinatario','terms'); ?>\n </div>\n <div class=\"col-md-6\">\n    <?php \n\n      $query ='SELECT \n  areas.id, \n  areas.nombre\nFROM \n  public.areas\nWHERE \n  areas.status = 1 ';\n\n        $resultrem=Yii::app()->db->createCommand($query)->queryAll();\n\n         $destinatarios['false'] = 'Todos';\n\n         foreach ($resultrem as $value) {\n                    $destinatarios[$value['id']] = \"$value[nombre]\";\n                }\n\n\n    //echo CHtml::label('Tipo de Informe','terms'); ?>\n<?php $this->widget('ext.select2.ESelect2',array(\n  'name'=>'area_dest',\n   'options'=>array(\n                      //  'placeholder' => 'Seleccionar Tipo de Informe', \n                    'width'=>'100%',\n                    'maximumSelectionSize'=>5,\n                    ),\n  'data' => $destinatarios,\n)); ?>\n</div>\n</div>\n\n\n<div class=\"row\">\n      <div class=\"col-md-12\">\n\n<?php\necho CHtml::ajaxSubmitButton(\n    'Generar informe ',\n    array('informes/reqPto2'),\n    array(\n        'update'=>'#req_res02',\n    ),\n     array('id'=>'btn','class'=>'btn-success') \n);\n?>\n\n\n\n<?php echo CHtml::submitButton('Limpiar formulario',array('class'=>'btn-info')); ?>\n\n\n</div>\n\n</div>\n<div class=\"row-fluid\">\n</div>\n<?php //echo CHtml::submitButton('Generar',array('class'=>'submit')); ?>\n<?php echo CHtml::endForm();\n\n ?>\n</div><!-- form -->\n\n                                               \n                                            </div>\n                                        </div>\n                                        <!-- END WIDGET TABLE -->\n\n                                       \n                                <!-- END WIDGET TICKET TABLE -->\n                            </div>\n                            <!-- /main-content -->\n                          <div id=\"req_res02\"></div>\n                        </div>\n\n\n                      \n                    </div>\n                    <!-- /content-wrapper -->\n",
+			"file": "protected/views/informes/turnos.php",
+			"file_size": 14200,
+			"file_write_time": 131082445726714400,
 			"settings":
 			{
-				"buffer_size": 13128,
+				"buffer_size": 14188,
 				"line_ending": "Unix"
 			}
 		},
@@ -88,7 +90,15 @@
 			"file": "protected/views/informes/_entrada.php",
 			"settings":
 			{
-				"buffer_size": 12477,
+				"buffer_size": 21965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/informes/_salida.php",
+			"settings":
+			{
+				"buffer_size": 26244,
 				"line_ending": "Unix"
 			}
 		},
@@ -96,7 +106,7 @@
 			"file": "protected/views/layouts/main.php",
 			"settings":
 			{
-				"buffer_size": 30294,
+				"buffer_size": 30439,
 				"line_ending": "Unix"
 			}
 		},
@@ -120,7 +130,23 @@
 			"file": "protected/controllers/InformesController.php",
 			"settings":
 			{
-				"buffer_size": 5924,
+				"buffer_size": 3549,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/views/informes/_turnos.php",
+			"settings":
+			{
+				"buffer_size": 11980,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "protected/models/TurnosList.php",
+			"settings":
+			{
+				"buffer_size": 4013,
 				"line_ending": "Unix"
 			}
 		},
@@ -166,13 +192,13 @@
 	"expanded_folders":
 	[
 		"/var/www/html/sigedo",
-		"/var/www/html/sigedo/js",
 		"/var/www/html/sigedo/protected",
 		"/var/www/html/sigedo/protected/config",
 		"/var/www/html/sigedo/protected/controllers",
 		"/var/www/html/sigedo/protected/models",
 		"/var/www/html/sigedo/protected/views",
 		"/var/www/html/sigedo/protected/views/correspondencia",
+		"/var/www/html/sigedo/protected/views/entradaView",
 		"/var/www/html/sigedo/protected/views/informes",
 		"/var/www/html/sigedo/protected/views/layouts",
 		"/var/www/html/sigedo/protected/views/main",
@@ -183,6 +209,7 @@
 	],
 	"file_history":
 	[
+		"/var/www/html/sigedo/protected/controllers/apiExcelController.php",
 		"/var/www/html/sigedo/protected/views/main/index.php",
 		"/home/cesar/.cache/.fr-Em7Uyr/sindicato/index.php",
 		"/home/cesar/Escritorio/sindicato/index.php",
@@ -323,7 +350,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -332,15 +359,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31005,
+						"buffer_size": 30975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20481,
-								20481
+								19506,
+								19506
 							]
 						],
 						"settings":
@@ -350,58 +377,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6264.0,
+						"translation.y": 5400.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "protected/controllers/apiExcelController.php",
+					"file": "protected/controllers/ApiExcelController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6646,
+						"buffer_size": 69402,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								432,
-								432
-							]
-						],
-						"settings":
-						{
-							"auto_name": "apiExcel.php",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "protected/views/informes/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13128,
-								13128
+								22548,
+								22548
 							]
 						],
 						"settings":
@@ -411,10 +407,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6516.0,
+						"translation.y": 9477.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "protected/views/informes/turnos.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11223,
+								11223
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4509.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -423,15 +449,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12477,
+						"buffer_size": 21965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10703,
-								10703
+								12176,
+								12176
 							]
 						],
 						"settings":
@@ -440,28 +466,58 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 27.0,
-						"translation.y": 3186.0,
+						"translation.x": 0.0,
+						"translation.y": 6102.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "protected/views/layouts/main.php",
+					"file": "protected/views/informes/_salida.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30294,
+						"buffer_size": 26244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								28559,
-								28559
+								18521,
+								18521
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7938.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "protected/views/layouts/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17699,
+								17699
 							]
 						],
 						"settings":
@@ -469,15 +525,15 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 12659.0,
+						"translation.x": 297.0,
+						"translation.y": 7848.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "js/excel.js",
 					"semi_transient": false,
 					"settings":
@@ -503,11 +559,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "protected/models/Correspondencia.php",
 					"semi_transient": false,
 					"settings":
@@ -529,27 +585,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3909.0,
+						"translation.y": 3841.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "protected/controllers/InformesController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5924,
+						"buffer_size": 3549,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								826,
-								826
+								2999,
+								2999
 							]
 						],
 						"settings":
@@ -558,14 +614,73 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1935.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
+					"file": "protected/views/informes/_turnos.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6000,
+								6000
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 99.0,
+						"translation.y": 1371.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "protected/models/TurnosList.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3749,
+								3749
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1944.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
 					"file": "protected/controllers/AreasController.php",
 					"semi_transient": false,
 					"settings":
@@ -590,7 +705,7 @@
 						"translation.y": 2808.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -655,7 +770,11 @@
 		[
 			[
 				"",
-				"/var/www/html/sedeco/sedeco.sublime-project"
+				"/var/www/html/spdgm/presupuesto.sublime-project"
+			],
+			[
+				"sit",
+				"/var/www/html/sitio/sitio.sublime-project"
 			],
 			[
 				"spdg",

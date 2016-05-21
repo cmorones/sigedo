@@ -461,6 +461,7 @@ if($perfil==4){
 									</a>
 									<ul class="sub-menu ">
 										<li><a href="<?php echo CController::createUrl('informes/index'); ?>"><span class="text">Informe Correspondencia por criterios</span></a></li>
+										<li><a href="<?php echo CController::createUrl('informes/turnos'); ?>"><span class="text">Informe Turnos por criterios</span></a></li>
 										<!--<li><a href="<?php echo CController::createUrl('informes/area'); ?>"><span class="text">Informe correspondencia de Entrada</span></a></li>
 										
 										<!--<li><a href="<?php echo CController::createUrl('informes/turnos'); ?>"><span class="text">Informe correspondencia de Turnos</span></a></li>-->

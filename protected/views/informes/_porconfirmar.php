@@ -23,8 +23,8 @@
                                                 documentos.id = correspondencia.id_docto AND
                                                 correspondencia.destinatario = directoriodest.id AND
                                                 directorio.id_dp = datos_personales.id AND
-                                                nombredoc.id = correspondencia.tipo AND
-                                                nombretipo.id = documentos.tipo_docto AND
+                                                nombretipo.id = correspondencia.tipo AND
+                                                nombredoc.id = documentos.tipo_docto AND
                                                 directoriodest.id_dp = datosdest.id AND
                                                 directoriodest.id_area = areas2.id AND
                                                 areas.id = directorio.id_area AND
@@ -68,8 +68,8 @@ WHERE
   documentos.id = correspondencia.id_docto AND
   correspondencia.destinatario = directoriodest.id AND
   directorio.id_dp = datos_personales.id AND
-  nombredoc.id = correspondencia.tipo AND
-  nombretipo.id = documentos.tipo_docto AND
+  nombretipo.id = correspondencia.tipo AND
+  nombredoc.id = documentos.tipo_docto AND
   directoriodest.id_dp = datosdest.id AND
   directoriodest.id_area = areas2.id AND
   areas.id = directorio.id_area AND
@@ -98,8 +98,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
@@ -143,8 +143,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
@@ -176,8 +176,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
@@ -222,8 +222,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
@@ -252,8 +252,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
@@ -299,8 +299,8 @@ WHERE
                                           documentos.id = correspondencia.id_docto AND
                                           correspondencia.destinatario = directoriodest.id AND
                                           directorio.id_dp = datos_personales.id AND
-                                          nombredoc.id = correspondencia.tipo AND
-                                          nombretipo.id = documentos.tipo_docto AND
+                                          nombretipo.id = correspondencia.tipo AND
+                                          nombredoc.id = documentos.tipo_docto AND
                                           directoriodest.id_dp = datosdest.id AND
                                           directoriodest.id_area = areas2.id AND
                                           areas.id = directorio.id_area AND
